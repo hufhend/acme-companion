@@ -11,7 +11,7 @@ services:
       - html:/usr/share/nginx/html
       - certs:/etc/nginx/certs:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
-    network_mode: bridge
+    # network_mode: bridge
     restart: always
 
   acme-companion:
@@ -25,7 +25,7 @@ services:
       - certs:/etc/nginx/certs:rw
       - acme:/etc/acme.sh
       - /var/run/docker.sock:/var/run/docker.sock:ro
-    network_mode: bridge
+    # network_mode: bridge
     restart: always
 
 volumes:
@@ -34,3 +34,8 @@ volumes:
   html:
   certs:
   acme:
+
+networks:
+  default:
+    name: network
+
