@@ -37,5 +37,5 @@ volumes:
 
 networks:
   default:
-    name: network
+    name: nginx-proxy
 
